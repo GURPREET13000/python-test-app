@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "<h1>Hello from GitHub Actions!</h1><p>My automated deployment works.</p>"
-
+   return "<h1>Automated deployment is officially working!</h1>"
 if __name__ == '__main__':
     app.run()
