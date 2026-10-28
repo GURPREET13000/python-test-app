@@ -11,12 +11,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy via SSH
+      - name: Execute SSH commands on PythonAnywhere
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ssh.pythonanywhere.com
           username: GURPREET1307
           key: ${{ secrets.PA_SSH_PRIVATE_KEY }}
+          port: 22
+          script_stop: true
           script: |
             cd /home/GURPREET1307/python-test-app
             git pull origin main
